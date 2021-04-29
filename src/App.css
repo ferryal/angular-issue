@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+tbody tr td {
+  cursor: pointer !important;
+}
