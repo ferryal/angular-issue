@@ -26,3 +26,15 @@ export const getRepoIssues = async ({ sizePerPage, page}, query) => {
     throw Error(error);
   }
 }
+
+export const getIssueDetails = async (data) => {
+  try {
+    const res = await fetch(`https://api.github.com/repos/angular/angular/issues/${data.number}`, headers);
+    if (res.status === 200) {
+      return await res.json();
+    }
+    throw Error(res.message);
+  } catch (error) {
+    throw Error(error);
+  }
+}
